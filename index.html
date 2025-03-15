@@ -19,7 +19,7 @@
         <section>
             <div class="input-container">
                 <input class="city-search-input-filed" type="text" placeholder="Search City">
-                <button class="search-btn">
+                <button id="search-btn" class="search-btn">
                     <span>
                         <i class="fa-brands fa-searchengin"></i>
                     </span>
@@ -29,7 +29,7 @@
         <!-- End Input Container Section -->
 
         <!-- Start Weather Information -->
-         <section class="weather-info-part">
+         <section class="weather-info-part" style="display: none;">
             <!-- location  -->
             <div class="location-data-contaienr">
                 <div class="location">
@@ -99,12 +99,30 @@
                     <img src="./assets/weather/thunderstorm.svg" alt="" class="forecast-item-image">
                     <h5 class="forecast-temp">29 ℃</h5>
                 </div>
-
-             </div>
-
-            
+             </div>            
          </section>
         <!-- End Weather Information -->
+
+        <!-- Start Search City-->
+         <section class="search-city section-massage">
+            <img src="./assets/message/search-city.png" alt="">
+             <div>
+                <h1>Search City</h1>
+                <h4 class="text-regular">Find out the weather conditions of any city.</h4>
+             </div>
+         </section>
+        <!-- End Search City-->
+
+         <!-- Start Noit found part-->
+         <section class="not-found section-massage" style="display: none;">
+            <img src="./assets/message/not-found.png" alt="">
+             <div>
+                <h1>Search City</h1>
+                <h4 class="text-regular">Find out the weather conditions of any city.</h4>
+             </div>
+         </section>
+        <!-- End Not found part -->
+
     </main>
     <!-- End main part -->
     <!-- Custom JS file link -->
