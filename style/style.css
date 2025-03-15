@@ -123,8 +123,8 @@ body::before{
 }
 
 .weather-summary-iamge{
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
 }
 .weather-summer-info{
     text-align: end;
@@ -146,5 +146,45 @@ body::before{
     font-size: 30px;
 }
 
+/* Start Forecast items container */
+.forecast-items-container{
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    padding-bottom: 12px;
+}
 
+.forecast-items-container::-webkit-scrollbar{
+    height: 10px;
+    
+}
+.forecast-items-container::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0, 0.1);
+    border-radius: 99px;
+}
+.forecast-items-container::-webkit-scrollbar-thumb{
+    background: rgb(0, 0, 0, 0.15);
+    border-radius: 99px;
+    cursor: pointer;
+}
+.forecast-item{
+    min-width: 75px;
+    background: rgb(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0.2s background;
+}
+.forecast-item:hover{
+    background: rgb(255, 255, 255, 0.15);
+}
+
+
+.forecast-item-image{
+    width: 35px;
+    height: 35px;
+}
 /* End Weather Information part */
