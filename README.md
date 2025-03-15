@@ -30,7 +30,7 @@ This **Weather Application** allows users to check real-time weather conditions 
 ✅ **Google Fonts & FontAwesome Icons** – UI Enhancements  
 
 ## 📸 Screenshots  
-![Weather App Screenshot](./UI.png))  
+![Weather App Screenshot](./UI.png)  
 
 ## 🚀 Deployment  
 This project is deployed on **Netlify**.  
