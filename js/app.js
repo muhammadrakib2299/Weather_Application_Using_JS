@@ -15,6 +15,8 @@ const windValueText = document.querySelector('.wind-value-text');
 const weatherSummerImage = document.querySelector('.weather-summary-iamge');
 const currentDateText = document.querySelector('.current-date-text');
 
+const foreCastItemContainer = document.querySelector('.forecast-items-container');
+
 
 document.getElementById('search-btn').addEventListener('click', function(){
     // get the city name from input filed
@@ -74,7 +76,6 @@ async function updateWeatherInfo(city){
         wind: {speed}
     } = weatherData;
 
-
     // Update on UI
     countryName.textContent = country;
     tempText.textContent = Math.round(temp);
@@ -85,14 +86,57 @@ async function updateWeatherInfo(city){
     weatherSummerImage.src = `./assets/weather/${getWeatherIcon(id)}`
     currentDateText.textContent = getCurrentDate();
     
-
+    await updataForecastInfo(city);
     ShowdisplaySection(weatehrInfoSection);
 }
 
+// Update forecast 
+async function updataForecastInfo(city){
+    const foreCastData = await getFetchData('forecast', city)
+
+    const timeTaken = '12:00:00';
+    const todayDate = new Date().toISOString().split('T')[0];
+
+    foreCastItemContainer.innerHTML = ' ';
+    foreCastData.list.forEach(forecasWeather => {
+        if(forecasWeather.dt_txt.includes(timeTaken) & !forecasWeather.dt_txt.includes(todayDate)){
+            updateForecastItems(forecasWeather);
+        }
+    })
+
+}
+
+// Updata Forecast Items
+function updateForecastItems(weatherData){
+
+    const {
+        dt_txt: date,
+        weather: [{id}],
+        main: {temp}
+    } = weatherData;
+
+    const dateTaken = new Date(date);
+    const dateOption = {
+        day: '2-digit',
+        month: 'short',
+    }
+    const dateResult = dateTaken.toLocaleDateString('en-US', dateOption);
+
+    const forecastItem = `
+            <div class="forecast-item">
+                <h5 class="forecast-item-date text-regular">${dateResult}</h5>
+                <img src="./assets/weather/${getWeatherIcon(id)}" alt="" class="forecast-item-image">
+                <h5 class="forecast-temp">${Math.round(temp)} ℃</h5>
+            </div>
+    `
+    foreCastItemContainer.insertAdjacentHTML('beforeend', forecastItem);
+}
+
+
+// Show diplay section
 function ShowdisplaySection(section){
-        [weatehrInfoSection, searchCitySection, notFoundFunction].forEach(section => section.style.display = 'none');
-    
-    
-    section.style.display = 'flex';
+    [weatehrInfoSection, searchCitySection, notFoundFunction].forEach(section => section.style.display = 'none');
+
+section.style.display = 'flex';
 
 }
