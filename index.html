@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
 
-    <!-- Google fonts icons CDN -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
-
+    <!-- Fontawesome CDN Link -->
+    <script src="https://kit.fontawesome.com/95dcea78c3.js" crossorigin="anonymous"></script>
+    
     <!-- Custom CSS link -->
     <link rel="stylesheet" href="./style/style.css">
 </head>
@@ -15,17 +15,67 @@
     <!-- Start main part -->
     <main class="main-part-container">
 
-        <div>
+        <!-- Start Input Container Secton -->
+        <section>
             <div class="input-container">
                 <input class="city-search-input-filed" type="text" placeholder="Search City">
                 <button class="search-btn">
-                    <span class="material-symbols-outlined">
-                        search
+                    <span>
+                        <i class="fa-brands fa-searchengin"></i>
                     </span>
                 </button>
             </div>
-        </div>
+        </section>
+        <!-- End Input Container Section -->
 
+        <!-- Start Weather Information -->
+         <section class="weather-info-part">
+            <!-- location  -->
+            <div class="location-data-contaienr">
+                <div class="location">
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <h4 class="country-text">Dhaka</h4>
+                </div>
+                <h5 class="current-date-text text-regular">Wed, 07 Aug</h5>
+            </div>
+             
+            <!-- Weather Summary Container -->
+            <div class="weather-summary-container">
+                <img src="./assets/weather/clouds.svg" alt="" class="weather-summary-iamge">
+                <div class="weather-summer-info">
+                    <h1 class="temp-text">29 ℃</h1>
+                    <h3 class="weather-condition-text text-regular">Coulds</h3>
+                </div>
+            </div>
+
+            <div class="weather-condition-container">
+                <div class="condition-item">
+                    <span>
+                        <i class="fa-solid fa-droplet"></i>
+                    </span>
+                    <div class="condition-info">
+                        <h5 class="text-regular">Humidity</h5>
+                        <h5 class="humidity-value-text">55%</h5>
+                    </div>
+                </div>
+
+                <div class="condition-item">
+                    <span>
+                        <i class="fa-solid fa-wind"></i>
+                    </span>
+                    <div class="condition-info">
+                        <h5 class="text-regular">Wind Speed</h5>
+                        <h5 class="wind-value-text">2 M/s</h5>
+                    </div>
+                </div>
+
+            </div>
+
+            
+         </section>
+        <!-- End Weather Information -->
     </main>
     <!-- End main part -->
     <!-- Custom JS file link -->
